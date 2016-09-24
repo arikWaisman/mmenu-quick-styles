@@ -1,0 +1,62 @@
+@mixin MMenuStyles($background: inherit, $text-and-borders: inherit, $hover-background: inherit, $active-and-hover-text: inherit) {
+
+  .mm-panels {
+    background: $background;
+    .mm-navbar {
+      border-color: $text-and-borders;
+      a {
+        color: $text-and-borders;
+        &:before {
+          border-color: $text-and-borders;
+        }
+      }
+    }
+    ul.mm-listview {
+      @if ($text-and-borders != inherit) {
+        border-color: transparentize($text-and-borders, .5);
+      }
+      li {
+        a {
+          color: $text-and-borders;
+          &:hover,
+          &:active,
+          &:focus {
+            -webkit-tap-highlight-color: $hover-background;
+            tap-highlight-color: $hover-background;
+            background-color: $hover-background;
+            color: $active-and-hover-text !important;
+          }
+          &:after {
+            border-color: $text-and-borders;
+          }
+        }
+      }
+      li.current-menu-item {
+        a {
+          color: $active-and-hover-text;
+        }
+      }
+      .current-menu-ancestor {
+        a {
+          color: $active-and-hover-text;
+          &:hover {
+            color: $active-and-hover-text;
+            background-color: $text-and-borders;
+          }
+        }
+      }
+      li.dropdown {
+        a.mm-next {
+          &:hover,
+          &:focus,
+          &:active {
+            &:after {
+              border-color: $active-and-hover-text;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
