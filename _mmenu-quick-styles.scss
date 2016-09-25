@@ -21,8 +21,8 @@
           &:hover,
           &:active,
           &:focus {
-            -webkit-tap-highlight-color: $hover-background;
-            tap-highlight-color: $hover-background;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            tap-highlight-color: rgba(0, 0, 0, 0);
             background-color: $hover-background;
             color: $active-and-hover-text !important;
           }
@@ -48,9 +48,11 @@
       li.dropdown {
         a.mm-next {
           &:hover,
-          &:focus,
-          &:active {
+          &:active,
+          &:focus{
             &:after {
+              -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+              tap-highlight-color: rgba(0, 0, 0, 0);
               border-color: $active-and-hover-text;
             }
           }
